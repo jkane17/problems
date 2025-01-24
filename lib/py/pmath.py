@@ -1,9 +1,9 @@
 
 """
-    File:
+    @file
         pmath.py
     
-    Description:
+    @description
         Mathematical functions.
 """
 
@@ -13,11 +13,11 @@ golden_ratio = 0.5 * (1 + math.sqrt(5))
 golden_ratio_conjugate = 1 - golden_ratio
 
 def fibn(n: int) -> int:
-    """Compute the n-th number of the Fibonacci sequence"""
+    """Compute the n-th number of the Fibonacci sequence."""
     return int((golden_ratio ** n - golden_ratio_conjugate ** n) / math.sqrt(5))
 
 def get_primes(n: int) -> list[int]:
-    """Get an array of primes less than or equal to some number"""
+    """Get an array of primes less than or equal to some number."""
     prime = [True] * (n + 1)
 
     for p in range(2, 1 + math.isqrt(n)):
@@ -39,7 +39,7 @@ def is_palindrome(number: int) -> bool:
     return original == reversed
 
 def prime_factorise(n: int) -> list[int]:
-    """Get the prime factors of a given number (using trial division)"""
+    """Get the prime factors of a given number (using trial division)."""
     factors = []
     remaining = n
     

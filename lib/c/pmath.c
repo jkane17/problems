@@ -1,9 +1,9 @@
 
 /*
-    File:
+    @file
         pmath.c
     
-    Description:
+    @description
         Mathematical functions.
 */
 
@@ -20,6 +20,16 @@ const double GOLDEN_RATIO_CONJUGATE = -0.6180339887498949;
 
 uint64_t pmath_fibn(uint64_t n) {
     return (pow(GOLDEN_RATIO, n) - pow(GOLDEN_RATIO_CONJUGATE, n)) / sqrt(5);
+}
+
+uint64_t gcd(uint64_t x, uint64_t y) {
+    uint64_t tmp;
+    while (y > 0) {
+        tmp = y;
+        y = x % y;
+        x = tmp;
+    }
+    return x;
 }
 
 bool pmath_isPalindrome(uint64_t number) {

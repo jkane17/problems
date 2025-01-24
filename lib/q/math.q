@@ -1,9 +1,9 @@
 
 /
-    File:
+    @file
         math.q
     
-    Description:
+    @description
         Mathematical functions.
 \
 
@@ -16,6 +16,12 @@
 // @param x Long Maximum.
 // @return Longs Fibonacci numbers.
 .math.fibm:-1_.math.fib {x>last y}@;
+
+// @brief Greatest common divisor of two numbers (Euclidean algorithm).
+// @param x Long|Int|Short First number.
+// @param y Long|Int|Short Second number.
+// @returns Long|Int Greatest common divisor.
+.math.gcd:{first last({y,x mod y}.)/x,y};
 
 // @brief Prime factorisation using trial division.
 // @param x Integer Number to factorise.

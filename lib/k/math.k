@@ -1,9 +1,9 @@
 
 /
-    File:
+    @file
         math.k
     
-    Description:
+    @description
         Mathematical functions.
 \
 
@@ -16,6 +16,18 @@
 // @param x Long Maximum.
 // @return Longs Fibonacci numbers.
 .math.fibm:-1_.math.fib {x>(:/)y}@;
+
+// @brief Greatest common divisor of two numbers (Euclidean algorithm)
+// @param x Long|Int|Short First number.
+// @param y Long|Int|Short Second number.
+// @returns Long|Int Greatest common divisor.
+,math.gcd:{*(:/)({y,.math.mod[x;y]}.)/x,y};
+
+// @brief Modulo of two numbers.
+// @param x Long|Int|Short First number.
+// @param y Long|Int|Short Second number.
+// @returns Long|Int Modulus.
+,math.mod:{x-y*x div y};
 
 // @brief Prime factorisation using trial division.
 // @param x Integer Number to factorise.

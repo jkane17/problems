@@ -1,9 +1,9 @@
 
 /*
-    File:
+    @file
         pmath.h
     
-    Description:
+    @description
         Mathematical functions.
 */
 
@@ -19,6 +19,15 @@
  * @return N-th number of the Fibonacci sequence.
  */
 uint64_t pmath_fibn(uint64_t n);
+
+/**
+ * @brief brief Greatest common divisor of two numbers (Euclidean algorithm).
+ * 
+ * @param x First number.
+ * @param y Second number.
+ * @return Greatest common divisor. 
+ */
+uint64_t gcd(uint64_t x, uint64_t y);
 
 /**
  * @brief Is a number a palindrome?
