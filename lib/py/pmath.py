@@ -38,6 +38,14 @@ def is_palindrome(number: int) -> bool:
         number //= 10                         # Remove the last digit
     return original == reversed
 
+def nsum(x):
+    """Sum of the first x positive integers."""
+    return int(.5 * x * (x + 1))
+
+def n2sum(x):
+    """Sum of the squares of the first x positive integers."""
+    return (x * (1 + 2 * x) * (x + 1)) // 6
+
 def prime_factorise(n: int) -> list[int]:
     """Get the prime factors of a given number (using trial division)."""
     factors = []

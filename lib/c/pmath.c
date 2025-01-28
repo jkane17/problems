@@ -22,7 +22,7 @@ uint64_t pmath_fibn(uint64_t n) {
     return (pow(GOLDEN_RATIO, n) - pow(GOLDEN_RATIO_CONJUGATE, n)) / sqrt(5);
 }
 
-uint64_t gcd(uint64_t x, uint64_t y) {
+uint64_t pmath_gcd(uint64_t x, uint64_t y) {
     uint64_t tmp;
     while (y > 0) {
         tmp = y;
@@ -73,6 +73,10 @@ uint64_t *pmath_getPrimes(uint64_t n, uint64_t *nprimes) {
 
     return primes;
 }
+
+inline uint64_t pmath_nsum(uint64_t x) { return .5 * x * (x + 1); }
+
+inline uint64_t pmath_n2sum(uint64_t x) { return (x * (1 + 2 * x) * (x + 1)) / 6; }
 
 uint64_t *pmath_primeFactorise(uint64_t n, uint64_t *nfactors) {
     uint64_t nf = 1;

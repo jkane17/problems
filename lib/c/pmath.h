@@ -27,7 +27,7 @@ uint64_t pmath_fibn(uint64_t n);
  * @param y Second number.
  * @return Greatest common divisor. 
  */
-uint64_t gcd(uint64_t x, uint64_t y);
+uint64_t pmath_gcd(uint64_t x, uint64_t y);
 
 /**
  * @brief Is a number a palindrome?
@@ -45,6 +45,22 @@ bool pmath_isPalindrome(uint64_t number);
  * @return Array of primes (user responsible for deallocation).
  */
 uint64_t *pmath_getPrimes(uint64_t n, uint64_t *nprimes);
+
+/**
+ * @brief Sum of the first x positive integers.
+ * 
+ * @param x Number of positive integers.
+ * @return Sum. 
+ */
+inline uint64_t pmath_nsum(uint64_t x);
+ 
+/**
+ * @brief Sum of the squares of the first x positive integers.
+ * 
+ * @param x Number of positive integers.
+ * @return Sum. 
+ */
+inline uint64_t pmath_n2sum(uint64_t x);
 
 /**
  * @brief Get the prime factors of a given number (using trial division).

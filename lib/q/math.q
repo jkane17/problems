@@ -23,6 +23,16 @@
 // @returns Long|Int Greatest common divisor.
 .math.gcd:{first last({y,x mod y}.)/x,y};
 
+// @brief Sum of the first x positive integers.
+// @param x Long|Int|Short Number of positive integers.
+// @return Long Sum.
+.math.nsum:{"j"$.5*x*x+1};
+
+// @brief Sum of the squares of the first x positive integers.
+// @param x Long|Int|Short Number of positive integers.
+// @return Long Sum.
+.math.n2sum:{div[x*(1+2*x)*x+1;6]};
+
 // @brief Prime factorisation using trial division.
 // @param x Integer Number to factorise.
 // @return Integers Prime factors.
