@@ -49,3 +49,15 @@
     sieve:{(x,n; @[y;1_-1+n*til 1+count[y] div n:1+y?1b;:;0b])}.;
     {x,1+where y}. ({any z#y}[;;floor sqrt x].) sieve/(2;0b,1_x#10b)
  };
+
+// @brief Check if a number is prime.
+// @param x Long|Int|Short Number to check.
+// @return boolean 1b if number is prime, 0b otherwise.
+.math.isPrime:{(x<>1) and not 0 in x mod 1_1+til floor sqrt x};
+
+// @brief Generate the first n primes.
+// @param n Long|Int|Short Number of primes.
+// @return Longs Primes.
+.math.nprimes:{[n] 
+    n#last(n>count last@){(x[0]+:1;x[1],p where .math.isPrime each p:-1 1+6*x 0)}/(1;2 3)
+ };

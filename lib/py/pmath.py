@@ -66,3 +66,30 @@ def prime_factorise(n: int) -> list[int]:
         factors.append(n)
 
     return factors
+
+def is_prime(n):
+    """Check if a number is prime"""
+    if n < 2: 
+        return False
+    for i in range(2, 1 + int(sqrt(n))):
+        if n % i == 0: 
+            return False
+    return True
+
+def nprimes(n):
+    """Generate the first n primes"""
+    if n < 1: 
+        return []
+
+    primes = [2, 3]
+    k = 6
+
+    while len(primes) < n:
+        for candidate in (k - 1, k + 1):
+            if is_prime(candidate):
+                primes.append(candidate)
+                if len(primes) == n:
+                    break
+        k += 6
+
+    return primes[:n]

@@ -123,3 +123,33 @@ uint64_t *pmath_primeFactorise(uint64_t n, uint64_t *nfactors) {
     *nfactors = nf;
     return factors;
 }
+
+bool isPrime(uint64_t n) {
+    if (n < 2) return false;
+    uint64_t upper = (uint64_t)floor(sqrt(n));
+    for (uint64_t i = 2; i <= upper; i++) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+uint64_t *nprimes(uint64_t n) {
+    if (n == 0) return NULL;
+
+    uint64_t len = 0, k = 6, next;
+    uint64_t *primes = (uint64_t*)malloc(n * sizeof(uint64_t));
+    primes[len++] = 2;
+    if (len < n) primes[len++] = 3; 
+
+    while (len < n) {
+        next = k - 1;
+        if (isPrime(next)) primes[len++] = next;
+        if (len < n) {
+            next = k + 1;
+            if (isPrime(next)) primes[len++] = next;
+        }
+        k += 6;
+    }
+
+    return primes;
+}

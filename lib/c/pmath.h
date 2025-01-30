@@ -71,4 +71,20 @@ inline uint64_t pmath_n2sum(uint64_t x);
  */
 uint64_t *pmath_primeFactorise(uint64_t n, uint64_t *nfactors);
 
+/**
+ * @brief Check if a number is prime.
+ * 
+ * @param n Number to check.
+ * @return true if number is prime, false otherwise.
+ */
+bool isPrime(uint64_t n);
+
+/**
+ * @brief Generate the first n primes.
+ * 
+ * @param n Number of primes.
+ * @return Primes array (user owns memory).
+ */
+uint64_t *nprimes(uint64_t n);
+
 #endif // #ifndef PMATH_H_INCLUDED
