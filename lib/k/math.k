@@ -48,3 +48,8 @@
 // @param n Long|Int|Short Number of primes.
 // @return Longs Primes.
 .math.nprimes:{[n] n#(:/)(n>#(:/)@){(x[0]+:1;x[1],p@&.math.isPrime'p:-1 1+6*x 0)}/(1;2 3)};
+
+// @brief Get Pythagorean Triplets that satisfy a + b + c = x.
+// @param Short|Int|Long Required result of a + b + c.
+// @return List List of triplets that satisfy the a + b + c = x.
+.math.pyTriplet:{m:range .(-_-:;_:)@'sqrt[x]%2,sqrt 2; n:(-m)+x div 2*m; a:2*m*n; b:(-). mn2:"j"$(m;n) xexp 2; c:+/mn2; i:&x=+/v:0|(a;b;c); +v[;i]};

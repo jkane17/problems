@@ -61,3 +61,16 @@
 .math.nprimes:{[n] 
     n#last(n>count last@){(x[0]+:1;x[1],p where .math.isPrime each p:-1 1+6*x 0)}/(1;2 3)
  };
+
+// @brief Get Pythagorean Triplets that satisfy a + b + c = x.
+// @param Short|Int|Long Required result of a + b + c.
+// @return List List of triplets that satisfy the a + b + c = x.
+.math.pyTriplet:{
+    m:range . (ceiling;floor)@'sqrt[x]%2,sqrt 2;
+    n:neg[m]+x div 2*m;    
+    a:2*m*n;                   
+    b:(-). mn2:"j"$(m;n) xexp 2; 
+    c:sum mn2; 
+    i:where x=sum v:0|(a;b;c);
+    flip v[;i]
+ };
